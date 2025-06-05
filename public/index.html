@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Colleges</h1>
+    <div class="card" id="data">
+    </div>
+    </ul>
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api/colleges/';
+        async function loadData(method='GET', body = null){
+            const headers = {
+                'Content-Type': 'application/json',
+            };
+            if (body) {
+                config.body = JSON.stringify(body);
+            }
+            try {
+                const response = await fetch(`${API_BASE_URL}`);
+                
+                if (!response.ok) {
+                    // If token is expired or invalid, force logout
+                    if (response.status === 401) {
+                        logout();
+                        throw new Error('Session expired. Please login again.');
+                    }
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Request failed');
+                }
+
+                return await response.json();
+            } catch (error) {
+                console.error('API Error:', error);
+                throw error;
+            }
+        }
+        async function showdata() {
+            const data = await loadData();
+            const container = document.getElementById('data');
+            data.innerHTML= ``;
+
+            data.forEach(element => {
+                const ul = document.createElement('ul');
+                data.innerHTML= ``;
+
+                const item1 = document.createElement('li');
+                item1.innerHTML=`${element.Name}`;
+                ul.appendChild(item1);
+
+                const item2 = document.createElement('li');
+                item2.innerHTML=`${element.CollegeCode}`;
+                ul.appendChild(item2);
+
+                const item3 = document.createElement('li');
+                item3.innerHTML=`${element.Address}`;
+                ul.appendChild(item3);
+                container.appendChild(ul);
+            });
+            
+        }
+        document.addEventListener('DOMContentLoaded', showdata);
+    </script>
+</body>
+</html>

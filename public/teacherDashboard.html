@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard - College ERP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-graduation-cap fa-2x" style="color: #3b82f6;"></i>
+        <h2>College ERP</h2>
+      </div>
+      
+      <div class="teacher-profile">
+        <div class="teacher-avatar">JD</div>
+        <div class="teacher-info">
+          <h3>Dr. Jane Doe</h3>
+          <p>Computer Science Dept.</p>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a>
+        <a href="#"><i class="fas fa-user-check"></i> Attendance</a>
+        <a href="#"><i class="fas fa-file-alt"></i> Exams</a>
+        <a href="#"><i class="fas fa-chart-line"></i> Results</a>
+        <a href="#"><i class="fas fa-book"></i> Courses</a>
+        <a href="#"><i class="fas fa-users"></i> Students</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <button class="mobile-menu-btn" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div>
+          <h1>Teacher Dashboard</h1>
+          <div class="date-display">Wednesday, June 4, 2025</div>
+        </div>
+        <div class="header-actions">
+          <div class="header-btn">
+            <i class="fas fa-bell"></i>
+            Notifications
+          </div>
+          <div class="header-btn">
+            <i class="fas fa-calendar-plus"></i>
+            Add Event
+          </div>
+          <div class="header-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3><i class="fas fa-users"></i> Total Students</h3>
+          <p>142</p>
+          <div class="trend up"><i class="fas fa-arrow-up"></i> 8% from last semester</div>
+        </div>
+        <div class="stat-card">
+          <h3><i class="fas fa-book"></i> Courses Teaching</h3>
+          <p>4</p>
+          <div class="trend">Same as last semester</div>
+        </div>
+        <div class="stat-card">
+          <h3><i class="fas fa-user-check"></i> Avg. Attendance</h3>
+          <p>87%</p>
+          <div class="trend up"><i class="fas fa-arrow-up"></i> 3% improvement</div>
+        </div>
+        <div class="stat-card">
+          <h3><i class="fas fa-chart-line"></i> Avg. Exam Score</h3>
+          <p>78.5</p>
+          <div class="trend down"><i class="fas fa-arrow-down"></i> 2.3% from last exam</div>
+        </div>
+      </div>
+
+      <!-- Today's Schedule -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-calendar-day"></i> Today's Schedule</h2>
+          <a href="#" class="view-all">View Weekly Schedule</a>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Course</th>
+              <th>Class</th>
+              <th>Room</th>
+              <th>Attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:00 - 10:30</td>
+              <td>Data Structures</td>
+              <td>CSE 2B</td>
+              <td>Room 305</td>
+              <td><span class="status-badge status-present">Marked</span></td>
+            </tr>
+            <tr>
+              <td>11:00 - 12:30</td>
+              <td>Algorithms</td>
+              <td>CSE 3A</td>
+              <td>Room 210</td>
+              <td><span class="status-badge status-present">Marked</span></td>
+            </tr>
+            <tr>
+              <td>14:00 - 15:30</td>
+              <td>Database Systems</td>
+              <td>IT 2C</td>
+              <td>Lab 5</td>
+              <td><button class="header-btn" style="padding: 5px 10px;">Mark Now</button></td>
+            </tr>
+            <tr>
+              <td>16:00 - 17:30</td>
+              <td>Advanced Programming</td>
+              <td>CSE 4B</td>
+              <td>Room 401</td>
+              <td><span class="status-badge status-late">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-container">
+        <div class="chart-card">
+          <div class="card-header">
+            <h2><i class="fas fa-chart-pie"></i> Course Distribution</h2>
+          </div>
+          <div class="chart-placeholder">
+            Course Distribution Chart (Data Visualization)
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="card-header">
+            <h2><i class="fas fa-chart-bar"></i> Performance Trends</h2>
+          </div>
+          <div class="chart-placeholder">
+            Performance Trends Chart (Data Visualization)
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Exams -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-file-alt"></i> Upcoming Exams</h2>
+          <a href="#" class="view-all">View All Exams</a>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Course</th>
+              <th>Class</th>
+              <th>Exam Type</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jun 10, 2025</td>
+              <td>Data Structures</td>
+              <td>CSE 2B</td>
+              <td>Mid Semester</td>
+              <td><span class="status-badge status-present">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td>Jun 15, 2025</td>
+              <td>Algorithms</td>
+              <td>CSE 3A</td>
+              <td>Unit Test</td>
+              <td><span class="status-badge status-present">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td>Jun 20, 2025</td>
+              <td>Database Systems</td>
+              <td>IT 2C</td>
+              <td>Practical</td>
+              <td><span class="status-badge status-late">Preparing</span></td>
+            </tr>
+            <tr>
+              <td>Jun 25, 2025</td>
+              <td>Advanced Programming</td>
+              <td>CSE 4B</td>
+              <td>Project Review</td>
+              <td><span class="status-badge status-absent">Not Started</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Attendance Overview -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-user-check"></i> Attendance Overview</h2>
+          <a href="#" class="view-all">View Detailed Report</a>
+        </div>
+        <div class="attendance-grid">
+          <div class="attendance-card">
+            <h3><i class="fas fa-chalkboard-teacher"></i> Data Structures</h3>
+            <div class="attendance-stats">
+              <div class="stat-item">
+                <div class="value">92%</div>
+                <div class="label">Overall</div>
+              </div>
+              <div class="stat-item">
+                <div class="value">86%</div>
+                <div class="label">This Month</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 86%"></div>
+            </div>
+            <ul class="attendance-list">
+              <li>
+                <span>Last Class: Jun 3</span>
+                <span class="status-badge status-present">89%</span>
+              </li>
+              <li>
+                <span>May 28</span>
+                <span class="status-badge status-present">92%</span>
+              </li>
+              <li>
+                <span>May 21</span>
+                <span class="status-badge status-absent">78%</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="attendance-card">
+            <h3><i class="fas fa-laptop-code"></i> Database Systems</h3>
+            <div class="attendance-stats">
+              <div class="stat-item">
+                <div class="value">88%</div>
+                <div class="label">Overall</div>
+              </div>
+              <div class="stat-item">
+                <div class="value">84%</div>
+                <div class="label">This Month</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 84%"></div>
+            </div>
+            <ul class="attendance-list">
+              <li>
+                <span>Last Class: Jun 2</span>
+                <span class="status-badge status-present">86%</span>
+              </li>
+              <li>
+                <span>May 27</span>
+                <span class="status-badge status-present">90%</span>
+              </li>
+              <li>
+                <span>May 20</span>
+                <span class="status-badge status-late">76%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Toggle sidebar on mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', (e) => {
+      const isClickInsideSidebar = sidebar.contains(e.target);
+      const isClickOnMenuButton = menuToggle.contains(e.target);
+      
+      if (!isClickInsideSidebar && !isClickOnMenuButton && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>

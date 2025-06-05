@@ -1,0 +1,14 @@
+{
+  "name": "cloud-modal",
+  "version": "1.0.0",
+  "description": "Its a cloud modal of the college management system.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Rabi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}

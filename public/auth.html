@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMS Authentication</title>
+  <style>
+    :root {
+  --green-dark: #06683b;
+  --green: #10b981;
+  --light: #f8fafc;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  height: 100vh;
+}
+
+.left, .right {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+ background: #a4f9c4; 
+  color: white;
+}
+
+.right {
+  background: #10b981;
+}
+
+
+/* Circles */
+.circle-left, .circle-right {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.circle-left {
+  background: #10b981;
+  bottom: 0px;
+  left: -100px;
+}
+
+.circle-right {
+    width: 540px;
+    height: 540px;
+  background: #a4f9c4;
+    bottom: 20;
+    left: 40;
+    z-index: 0;
+}
+
+
+.square-right, .square-left{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+}
+
+.square-left{
+    background: #02865a;
+    right: 0;
+    bottom: 0;
+}
+
+.square-right{
+    background: #a4f9c4;
+    right: 0;
+    bottom: 0;
+}
+.square-right1{
+    width: 300px;
+    height: 100%;
+    background: #a4f9c4;
+    position:absolute;
+    left: 0;
+}
+.content {
+  z-index: 2;
+  text-align: center;
+  
+}
+
+.logo {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+  border: 1px solid #d1d5db;
+}
+
+.btn-outline, .btn-solid {
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.btn-solid {
+  background: #10b981;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .circle-left, .circle-right {
+    display: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="left">
+    <div class="circle-left"></div>
+    <div class="square-left"></div>
+    <div class="content">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Welcome Back!</h1>
+      <p>To stay connected with us please login with your personal info</p>
+      <button class="btn-outline">SIGN IN</button>
+    </div>
+  </div>
+  
+  <div class="right">
+    <div class="circle-right"></div>
+    <div class="square-right"></div>
+    <div class="square-right1"></div>
+    <div class="content">
+      <h1>welcome</h1>
+      <p>Login in to your account to continue</p>
+      <form>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#">Forgot password?</a>
+        <button class="btn-solid">LOG IN</button>
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
