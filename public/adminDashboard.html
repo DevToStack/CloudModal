@@ -41,19 +41,19 @@
       <div class="stats-grid">
         <div class="stat-card">
           <h3>Total Students</h3>
-          <p>1,025</p>
+          <p id="total-students">1,025</p>
         </div>
         <div class="stat-card">
           <h3>Total Teachers</h3>
-          <p>58</p>
+          <p id="total-teachers">58</p>
         </div>
         <div class="stat-card">
           <h3>Active Courses</h3>
-          <p>32</p>
+          <p id="total-courses">32</p>
         </div>
         <div class="stat-card fees">
           <h3>Fees Collected</h3>
-          <p>₹42.6L</p>
+          <p id="total-fees">₹42.6L</p>
         </div>
       </div>
 
@@ -186,7 +186,54 @@
       }
     });
 
-    
+    const BASE_URL='http://localhost:3000/api/admin';
+
+    async function fetchData(endpoint,method='GET',data=null) {
+
+      //headders
+      const config={
+        method,
+        headers:{
+          'Content-Type':'application/json',
+        }
+      }
+
+      if(data){
+        config.body = JSON.stringify(data);
+      }
+
+      try{
+        const response = await fetch(BASE_URL+endpoint,config);
+        const result = await response.json();
+        if(!response.ok){
+          throw new Error(result.message || 'Request failed');
+        }
+        return result;
+      }catch(error){
+          console.error('API Error:',error.message);
+          return null;
+      }
+    }
+
+    async function loadDashboardStats() {
+      try {
+          const stats = await fetchData('/dashboard/stats'); // Await the promise
+
+          document.getElementById('total-students').textContent=stats.total_students;
+          document.getElementById('total-teachers').textContent=stats.total_teachers;
+          document.getElementById('total-courses').textContent=stats.total_courses;
+          document.getElementById('total-fees').textContent='₹'+stats.total_fees;
+          
+      } catch (error) {
+          console.error('Failed to load dashboard stats:', error);
+      }
+    }
+
+    function init(){
+      loadDashboardStats();
+    }
+
+    document.addEventListener('DOMContent Loaded',init());
   </script>
 </body>
 </html>
