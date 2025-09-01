@@ -52,7 +52,7 @@ Easy to install, lightweight, and highly efficient, it’s a perfect choice for 
 </ol>
 
 <h2>📜 License</h2>
-<p>Licensed under the MIT License. You are free to use, modify, and distribute this app.</p>
+<p>You are free to use, modify, and distribute this app.</p>
 
 <h2>🙌 Author</h2>
-<p>Developed with ❤️ by <strong>Your Name</strong></p>
+<p>Developed with ❤️ by <strong>Mohammed Rabi</strong></p>
